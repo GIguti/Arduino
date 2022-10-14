@@ -12,8 +12,8 @@ e TCelsius[0] - TCelsius[4]. Estes são mandados para a planilha eletrônica*/
 #define Term4 A4
 #define Vin 4.85
 #define T0 298.15
-#define Rt 100000.0
-#define R0 100000.0
+#define Rt 100000.0//Resistência do resistor
+#define R0 100000.0//Resistência do termistor a 25°C
 float beta[Nterm];
 float Rinfty[Nterm];
 float TKelvin[Nterm];
@@ -21,7 +21,7 @@ float TCelsius[Nterm];
 float Vout[Nterm];
 float Rout[Nterm];
 int Ndados = 0;//contador para controlar a quantidade de dados coletados
-/*A planilha eletrônica é controlada pelo código Arduino através da função Serial.println*/
+/*A planilha eletrônica é controlada pelo PLX-DAQ utilizando o código Arduino através da função Serial.println*/
 void setup() {
   for(int i=0;i<Nterm;i++){
     beta[i]=3950.0;
